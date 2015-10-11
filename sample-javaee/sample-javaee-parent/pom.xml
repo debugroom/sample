@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.debugroom</groupId>
+    <artifactId>sample-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../sample-parent</relativePath>
+  </parent>
+  <artifactId>sample-javaee-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>sample-javaee-parent</name>
+  
+  <properties>
+    <org.apache.maven.plugins_maven-ear-plugin_version>2.8</org.apache.maven.plugins_maven-ear-plugin_version>
+    <org.apache.maven.plugins_maven-ejb-plugin_version>2.3</org.apache.maven.plugins_maven-ejb-plugin_version>
+    <org.apache.maven.plugins_maven-war-plugin_version>2.1.1</org.apache.maven.plugins_maven-war-plugin_version>
+  </properties>
+  
+  <build>
+  	<pluginManagement>
+  	  <plugins>
+  	    <plugin>
+  	      <groupId>org.apache.maven.plugins</groupId>
+  	      <artifactId>maven-ear-plugin</artifactId>
+  	      <version>${org.apache.maven.plugins_maven-ear-plugin_version}</version>
+  	    </plugin>
+  	    <plugin>
+  	      <groupId>org.apache.maven.plugins</groupId>
+  	      <artifactId>maven-ejb-plugin</artifactId>
+  	      <version>${org.apache.maven.plugins_maven-ejb-plugin_version}</version>
+  	    </plugin>
+  	    <plugin>
+  	      <groupId>org.apache.maven.plugins</groupId>
+  	      <artifactId>maven-war-plugin</artifactId>
+  	      <version>${org.apache.maven.plugins_maven-war-plugin_version}</version>
+  	    </plugin>
+  	  </plugins>
+  	</pluginManagement>
+  </build>
+</project>
