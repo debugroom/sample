@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- This definition is for confirming various injection timing of bean   -->
+    <bean id="confirmLyfeCycleService" class="org.debugroom.sample.domain.service.lyfecycle.LyfeCycleSampleService">
+      <constructor-arg>
+          <value>Spring Constructor Injection</value>
+      </constructor-arg>
+      <property name="setterString">
+          <value>Spring Setter Injection</value>
+      </property>
+    </bean>
+
+</beans>

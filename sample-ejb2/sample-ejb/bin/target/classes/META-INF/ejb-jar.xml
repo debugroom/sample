@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar version="2.1" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
+  <display-name>sample-ejb</display-name>
+
+  <!-- Enterprize Beans definition. -->
+  <enterprise-beans>
+    <session>
+      <ejb-name>SampleSessionBean</ejb-name>
+      <local-home>org.debugroom.sample.ejb2.domain.sample.local.SampleHome</local-home>
+      <local>org.debugroom.sample.ejb2.domain.sample.local.Sample</local>
+      <ejb-class>org.debugroom.sample.ejb2.domain.sample.local.SampleSessionBean</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+    </session>
+    <entity>
+      <ejb-name>CompanyEntityBean</ejb-name>
+      <local-home>org.debugroom.sample.ejb2.domain.sample.local.CompanyHome</local-home>
+      <local>org.debugroom.sample.ejb2.domain.sample.local.Company</local>
+      <ejb-class>org.debugroom.sample.ejb2.domain.sample.local.CompanyEntityBean</ejb-class>
+      <persistence-type>Container</persistence-type>
+      <prim-key-class>org.debugroom.sample.ejb2.domain.sample.local.CompanyPK</prim-key-class>
+      <reentrant>false</reentrant>
+      <cmp-field>
+        <field-name>companyId</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>companyName</field-name>
+      </cmp-field>
+      <query>
+        <query-method>
+          <method-name>findAll</method-name>
+          <method-params />
+        </query-method>
+        <ejb-ql>Select OBJECT(c) From CompanyEntityBean c</ejb-ql>
+      </query>
+      <query>
+        <query-method>
+          <method-name>findByName</method-name>
+          <method-params>
+            <method-param>java.lang.String</method-param>
+          </method-params>
+        </query-method>
+        <ejb-ql>Select OBJECT(c) From CompanyEntityBean c where c.companyName = ?1</ejb-ql>
+      </query>
+    </entity>
+  </enterprise-beans>
+  
+  <!-- Assembly Descriptor -->
+  <assembly-descriptor>
+    <container-transaction>
+      <method>
+        <ejb-name>SampleSessionBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <method>
+        <ejb-name>CompanyEntityBean</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+  </assembly-descriptor>
+
+</ejb-jar>

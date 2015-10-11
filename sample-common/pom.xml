@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.debugroom</groupId>
+    <artifactId>sample-parent</artifactId>
+    <relativePath>../sample-parent</relativePath>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>sample-common</artifactId>
+  <name>sample-common</name>
+
+  <properties>
+    <javax.inject_javax.inject_version>1</javax.inject_javax.inject_version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>${javax.inject_javax.inject_version}</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

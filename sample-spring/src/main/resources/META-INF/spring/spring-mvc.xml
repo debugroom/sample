@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:annotation-config />
+
+	<import resource="classpath*:/META-INF/spring/applicationContext.xml"/>
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+	
+	<mvc:annotation-driven />
+	
+	<!-- SimpleUrlHandlerMapping Definition -->
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+				/xmlbasedmappingsample=xmlBasedMappingSampleController
+			</value>
+		</property>
+	</bean>
+
+	<!-- ControllerClassNameHandlerMapping Definition -->
+<!--  
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
+-->
+	
+	<!-- Component-scan Definition -->
+	<context:component-scan base-package="org.debugroom.sample.app" />
+	
+	<!-- ExceptionHandler Definition -->
+	<bean id="exceptionHandler"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<value>
+				java.lang.Exception=exception
+			</value>
+		</property>
+	</bean>
+	
+<!-- Controller Definition -->
+
+	<!-- Using Default BeanNameUrlHandlerMapping Definition -->
+	<bean id="xmlBasedMappingSampleController" name="/xmlBasedMappingSample"
+		class="org.debugroom.sample.app.web.XmlBasedMappingSampleController" 
+		p:serviceExecutor-ref="serviceExecutor"/>
+
+<!-- ViewResolver Definition -->
+
+	<!-- Using Default InternalResourceViewResolver Definition -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>WEB-INF/jsp/</value>
+		</property>
+<!--  
+		<property name="suffix">.jsp</property>
+-->
+	</bean>
+
+	<!-- Using ResourceBundleViewResolver Definition -->
+	<bean id="resourceBundleViewResolver"
+		class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename">
+			<value>views</value>
+		</property>
+	</bean>
+
+	<bean id="sampleValidator" class="org.debugroom.sample.app.validator.SampleValidator" />
+	
+
+</beans>

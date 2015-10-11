@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath*:/META-INF/spring/*.properties"/>
+    
+    <import resource="classpath*:/META-INF/spring/springBatch-launchContext.xml" />
+    <import resource="classpath*:/META-INF/spring/sampleSpring-domain.xml" />
+    
+    <job id="jobSample" xmlns="http://www.springframework.org/schema/batch"
+        incrementer="jobParametersIncrementer" >
+        <step id="stepSample" parent="simpleStep">
+            <tasklet>
+                <chunk reader="readerSample" writer="writerSample" />
+            </tasklet>
+        </step>
+    </job>
+    
+    <bean id="jobParametersIncrementer"
+        class="org.springframework.batch.core.launch.support.RunIdIncrementer" />
+    
+    <bean id="simpleStep"
+        class="org.springframework.batch.core.step.factory.SimpleStepFactoryBean" 
+        abstract="true"
+        p:transactionManager-ref="transactionManager" 
+        p:jobRepository-ref="jobRepository" 
+        p:startLimit="100" 
+        p:commitInterval="10" />
+       
+    <bean id="readerSample"
+        class="org.springframework.batch.item.file.FlatFileItemReader"
+        scope="step">
+        <property name="lineMapper">
+            <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+                <property name="lineTokenizer">
+                    <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer" 
+                        p:delimiter="," p:names="${readerSample.lineMapper.lineTokenizer.names}" />
+                </property>
+                <property name="fieldSetMapper" ref="mapperSample" />
+            </bean>
+        </property>
+        <property name="resource" value="file:${readerSample.resource}" />
+    </bean> 
+    
+    <bean id="mapperSample"
+        class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper"
+        p:targetType="org.debugroom.sample.domain.model.User" >
+        <property name="customEditors">
+            <map>
+                <entry key="java.util.Date">
+                    <ref bean="dateEditor" />
+                </entry>
+            </map>
+            
+        </property>
+    </bean>
+
+    <bean id="dateEditor"
+        class="org.springframework.beans.propertyeditors.CustomDateEditor">
+        <constructor-arg>
+            <bean class="java.text.SimpleDateFormat">
+                <constructor-arg value="yyyy-MM-dd HH:mm:ss.SSS"/>
+            </bean>
+        </constructor-arg>
+        <constructor-arg value="true" />
+    </bean>
+    
+    <bean id="writerSample"
+        class="org.debugroom.sample.app.batch.item.file.SampleItemWriter" />
+</beans>
