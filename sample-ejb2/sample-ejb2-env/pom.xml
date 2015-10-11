@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.debugroom</groupId>
+    <artifactId>sample-ejb2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  <artifactId>sample-ejb2-env</artifactId>
+  <name>sample-ejb2-env</name>
+  
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <resource.directory>src/main/resources</resource.directory>
+        <buildFinalName>${project.artifactId}-${project.version}</buildFinalName>
+      </properties>
+    </profile>
+    <profile>
+      <id>glassfish</id>
+      <properties>
+        <resource.directory>${basedir}/profiles/glassfish/resources</resource.directory>
+        <buildFinalName>${project.artifactId}-${project.version}-glassfish</buildFinalName>
+      </properties>
+    </profile>
+    <profile>
+      <id>wildfly</id>
+      <properties>
+        <resource.directory>${basedir}/profiles/wildfly/resources</resource.directory>
+        <buildFinalName>${project.artifactId}-${project.version}-wildfly</buildFinalName>
+      </properties>
+    </profile>
+    <profile>
+      <id>geronimo</id>
+      <properties>
+        <resource.directory>${basedir}/profiles/geronimo/resources</resource.directory>
+        <buildFinalName>${project.artifactId}-${project.version}-geronimo</buildFinalName>
+      </properties>
+    </profile>
+  </profiles>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.openjpa</groupId>
+      <artifactId>openjpa-all</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.aries.jndi</groupId>
+      <artifactId>org.apache.aries.jndi.core</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.xbean</groupId>
+      <artifactId>xbean-naming</artifactId>
+      <version>3.7</version>
+    </dependency>
+  </dependencies>
+
+
+<!--  
+  <dependencies>
+    <dependency>
+    <groupId>geronimo</groupId>
+    <artifactId>j2ee-server</artifactId>
+    <version>1.0</version>
+    </dependency>
+  </dependencies>
+-->
+
+</project>

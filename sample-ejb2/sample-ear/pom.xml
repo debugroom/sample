@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>sample-ejb2</artifactId>
+    <groupId>org.debugroom</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>sample-ear</artifactId>
+  <packaging>ear</packaging>
+
+  <name>sample-ear</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.debugroom</groupId>
+      <artifactId>sample-webapp</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../sample-webapp/target/sample.war</systemPath>
+      <type>war</type>
+    </dependency>
+    <dependency>
+      <groupId>org.debugroom</groupId>
+      <artifactId>sample-ejb</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../sample-ejb/target/sample-ejb-1.0-SNAPSHOT.jar</systemPath>
+      <type>ejb</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${org.apache.maven.plugins_maven-compiler-plugin_version}</version>
+        <configuration>
+          <source>${java-version}</source>
+          <target>${java-version}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <version>${org.apache.maven.plugins_maven-ear-plugin_version}</version>
+        <configuration>
+            <version>${j2ee-version}</version>
+            <defaultLibBundleDir>lib</defaultLibBundleDir>
+            <modules>
+              <ejbModule>
+                <groupId>org.debugroom</groupId>
+                <artifactId>sample-ejb</artifactId>
+              </ejbModule>
+              <webModule>
+                <groupId>org.debugroom</groupId>
+                <artifactId>sample-webapp</artifactId>
+                <contextRoot>/sample</contextRoot>
+                <bundleFileName>sample.war</bundleFileName>
+              </webModule>
+            </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

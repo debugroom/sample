@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openejb-jar xmlns="http://www.openejb.org/xml/ns/openejb-jar-2.1"
+             xmlns:nam="http://geronimo.apache.org/xml/ns/naming-1.1"
+             xmlns:pkgen="http://www.openejb.org/xml/ns/pkgen-2.0"
+             xmlns:sec="http://geronimo.apache.org/xml/ns/security-1.1"
+             xmlns:sys="http://geronimo.apache.org/xml/ns/deployment-1.1">
+             
+    <sys:environment>
+        <sys:moduleId>
+            <sys:groupId>default</sys:groupId>
+            <sys:artifactId>sample-ejb2</sys:artifactId>
+            <sys:version>1.0-SNAPSHOT</sys:version>
+            <sys:type>car</sys:type>
+        </sys:moduleId>
+    </sys:environment>
+
+    <nam:cmp-connection-factory>
+        <nam:resource-link>SampleAppDataSource</nam:resource-link>
+    </nam:cmp-connection-factory>
+
+    <enterprise-beans>
+      <session>
+        <ejb-name>SampleSessionBean</ejb-name>
+        <jndi-name>ejb/SampleSessionBean</jndi-name>
+      </session>
+      <entity>
+        <ejb-name>CompanyEntityBean</ejb-name>
+        <jndi-name>ejb/CompanyEntityBean</jndi-name>
+        <table-name>COMPANY</table-name>
+        <cmp-field-mapping>
+            <cmp-field-name>companyId</cmp-field-name>
+            <table-column>COMPANY_ID</table-column>
+        </cmp-field-mapping>
+        <cmp-field-mapping>
+            <cmp-field-name>companyName</cmp-field-name>
+            <table-column>COMPANY_NAME</table-column>
+        </cmp-field-mapping>
+      </entity>
+    </enterprise-beans>
+
+</openejb-jar>

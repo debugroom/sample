@@ -13,6 +13,8 @@
     <module>sample-spring-parent</module>
     <module>sample-common</module>
     <module>sample-spring-common</module>
+    <module>sample-initdb</module>
+    <module>sample-ejb2</module>
   </modules>
 
 </project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.debugroom</groupId>
+    <artifactId>sample-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../sample-parent</relativePath>
+  </parent>
+
+  <artifactId>sample-ejb2</artifactId>
+  <packaging>pom</packaging>
+  <name>sample-ejb2</name>
+
+  <modules>
+  	<module>sample-ear</module>
+    <module>sample-ejb</module>
+    <module>sample-webapp</module>
+    <module>sample-ejb2-env</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
+  </dependencies>
+
+  <properties>
+	  <java-version>1.7</java-version>
+	  <j2ee-version>1.4</j2ee-version>
+	  <ejb-version>2.1</ejb-version>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  <javax.servlet_servlet-api_version>2.4</javax.servlet_servlet-api_version>
+	  <javax.servlet.jsp_jsp-api_version>2.1</javax.servlet.jsp_jsp-api_version>
+	  <org.apache.commons_commons-lang3_version>3.3.2</org.apache.commons_commons-lang3_version>
+	  <org.apache.maven.plugins_maven-compiler-plugin_version>2.0.2</org.apache.maven.plugins_maven-compiler-plugin_version>
+	  <org.apache.maven.plugins_maven-ear-plugin_version>2.6</org.apache.maven.plugins_maven-ear-plugin_version>
+	  <org.apache.maven.plugins_maven-ejb-plugin_version>2.1</org.apache.maven.plugins_maven-ejb-plugin_version>
+  </properties>
+
+</project>
