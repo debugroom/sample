@@ -43,6 +43,11 @@
             <artifactId>sample-javaee6-ejb</artifactId>
             <type>ejb</type>
         </dependency>
+        <dependency>
+            <groupId>org.debugroom</groupId>
+            <artifactId>sample-javaee6-infra</artifactId>
+            <type>ejb</type>
+        </dependency>
     </dependencies>
 
     <build>
@@ -59,6 +64,14 @@
                         have any modules (EJB-JARs and WARs) use them -->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
+                      <ejbModule>
+                        <groupId>org.debugroom</groupId>
+                        <artifactId>sample-javaee6-ejb</artifactId>
+                      </ejbModule>
+                      <ejbModule>
+                        <groupId>org.debugroom</groupId>
+                        <artifactId>sample-javaee6-infra</artifactId>
+                      </ejbModule>
                     <!-- Default context root of the web app is /sample-javaee6-web. 
                         If a custom context root is needed, uncomment the following snippet to
                         register our War as a web module and set the contextRoot property -->

@@ -2,13 +2,13 @@
     <wb-module deploy-name="sample-javaee6">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="sample-javaee6-web.war" deploy-path="/" handle="module:/resource/sample-javaee6-web/sample-javaee6-web">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="sample-javaee6-ejb.jar" deploy-path="/" handle="module:/resource/sample-javaee6-ejb/sample-javaee6-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sample-javaee6-infra.jar" deploy-path="/lib" handle="module:/resource/sample-javaee6-infra/sample-javaee6-infra">
+        <dependent-module archiveName="sample-javaee6-infra.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/debugroom/sample-javaee6-infra/1.0-SNAPSHOT/sample-javaee6-infra-1.0-SNAPSHOT.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="sample-javaee6-web.war" deploy-path="/" handle="module:/resource/sample-javaee6-web/sample-javaee6-web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="sample-common.jar" deploy-path="/lib" handle="module:/resource/sample-common/sample-common">

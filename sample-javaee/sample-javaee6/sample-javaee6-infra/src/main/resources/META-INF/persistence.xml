@@ -7,17 +7,20 @@
 
 	<persistence-unit name="sample-app">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        	<jta-data-source>java:/PostgresDS</jta-data-source>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.Address</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.AddressPK</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.Company</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.Credential</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.CredentialPK</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.Email</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.EmailPK</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.Phone</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.PhonePK</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.User</class>
-            <class>org.debugroom.sample.javaee6.domain.model.entity.UserPK</class>
+        <jta-data-source>java:/PostgresDS</jta-data-source>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.Address</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.AddressPK</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.Company</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.Credential</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.CredentialPK</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.Email</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.EmailPK</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.Phone</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.PhonePK</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.User</class>
+        <class>org.debugroom.sample.javaee6.domain.model.entity.UserPK</class>
+        <properties>
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
 	</persistence-unit>
 </persistence>

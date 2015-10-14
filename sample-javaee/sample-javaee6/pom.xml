@@ -66,7 +66,7 @@
                 <groupId>org.debugroom</groupId>
                 <artifactId>sample-javaee6-infra</artifactId>
                 <version>${project.version}</version>
-                <type>jar</type>
+                <type>ejb</type>
             </dependency>
 
             <!-- Define the version of the EJB jar so that we don't need 

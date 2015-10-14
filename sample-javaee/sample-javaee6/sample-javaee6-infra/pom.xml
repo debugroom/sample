@@ -7,12 +7,26 @@
   </parent>
   <artifactId>sample-javaee6-infra</artifactId>
   <name>sample-javaee6-infra</name>
+  <version>${project.version}</version>
+  <packaging>ejb</packaging>
   
   <dependencies>
   	<dependency>
   	  <groupId>org.debugroom</groupId>
   	  <artifactId>sample-common</artifactId>
   	</dependency>
+    <!-- Import the EJB API, we use provided scope as the API is included in JBoss EAP 6 -->
+    <dependency>
+      <groupId>org.jboss.spec.javax.ejb</groupId>
+      <artifactId>jboss-ejb-api_3.1_spec</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Import the CDI API, we use provided scope as the API is included in JBoss EAP 6 -->
+    <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
@@ -58,4 +72,19 @@
       <artifactId>postgresql</artifactId>
     </dependency>
   </dependencies>
+  
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <configuration>
+          <!-- Tell Maven we are using EJB 3.1 -->
+          <ejbVersion>3.1</ejbVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>

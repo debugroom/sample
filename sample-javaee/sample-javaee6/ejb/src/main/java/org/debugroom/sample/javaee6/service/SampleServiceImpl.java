@@ -1,5 +1,6 @@
 package org.debugroom.sample.javaee6.service;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -13,7 +14,7 @@ import org.debugroom.sample.javaee6.domain.model.entity.UserPK;
 @Stateless
 public class SampleServiceImpl implements SampleService{
 
-	@Inject
+	@EJB
 	UserRepository userRepository;
 	
 	@Override

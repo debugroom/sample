@@ -2,7 +2,9 @@ package org.debugroom.sample.javaee6.domain.repository.impl.jpa;
 
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.inject.Named;
+import javax.enterprise.inject.Model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +15,8 @@ import org.debugroom.sample.javaee6.domain.model.entity.User;
 import org.debugroom.sample.javaee6.domain.model.entity.UserPK;
 import org.debugroom.sample.javaee6.domain.repository.UserRepository;
 
-@Named
+@Stateless
+@Named("userRepository")
 public class UserRepositoryImpl implements UserRepository{
 
 	private EntityManagerFactory entityManagerFactory;
