@@ -31,6 +31,11 @@
     <name>sample-javaee6 - ejb</name>
 
     <dependencies>
+    	
+        <dependency>
+            <groupId>org.debugroom</groupId>
+            <artifactId>sample-javaee6-infra</artifactId>
+        </dependency>
 
         <!-- Declare the APIs we depend on and need for compilation. All of 
             them are provided by JBoss EAP 6 -->

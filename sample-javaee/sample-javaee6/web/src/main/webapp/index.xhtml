@@ -12,7 +12,8 @@
       <h:body>
       	<h2>サンプル</h2>
       	<h:form>
-      		<h:inputText value="#{sampleBean.text}" />
+      		CompanyId : <h:inputText value="#{sampleBean.companyId}" />
+      		UserId : <h:inputText value="#{sampleBean.userId}" />
       		<h:commandButton value="送信" action="#{sampleBean.next()}"/>
       	</h:form>
       </h:body>

@@ -1,28 +1,32 @@
 package org.debugroom.sample.javaee6.web.sample;
 
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Named;
+import javax.enterprise.inject.Model;
+import javax.inject.Inject;
 
-@Named
-@RequestScoped
+import org.debugroom.sample.javaee6.service.SampleService;
+
+import lombok.Data;
+
+@Data
+@Model
 public class SampleBean {
 	
 	private String text;
+	private String companyId;
+	private String userId;
+	
+	@Inject
+	private SampleService sampleService;
+	
 	
 	public String next(){
+		sampleService.findUserService(companyId, userId);
 		return "output.xhtml";
 	}
 	
 	public void display(){
-		System.out.println("Text : " + text);
-	}
-
-	public String getText() {
-		return text;
-	}
-
-	public void setText(String text) {
-		this.text = text;
+		System.out.println("CompanyId : " + companyId);
+		System.out.println("UserId : " + userId);
 	}
 
 }

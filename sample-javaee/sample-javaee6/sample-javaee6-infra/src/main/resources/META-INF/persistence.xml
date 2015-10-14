@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" 
+	xmlns="http://java.sun.com/xml/ns/persistence" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="sample-app">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        	<jta-data-source>java:/PostgresDS</jta-data-source>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.Address</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.AddressPK</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.Company</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.Credential</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.CredentialPK</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.Email</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.EmailPK</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.Phone</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.PhonePK</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.User</class>
+            <class>org.debugroom.sample.javaee6.domain.model.entity.UserPK</class>
+	</persistence-unit>
+</persistence>

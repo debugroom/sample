@@ -56,10 +56,18 @@
         <module>ejb</module>
         <module>web</module>
         <module>ear</module>
+        <module>sample-javaee6-infra</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>org.debugroom</groupId>
+                <artifactId>sample-javaee6-infra</artifactId>
+                <version>${project.version}</version>
+                <type>jar</type>
+            </dependency>
 
             <!-- Define the version of the EJB jar so that we don't need 
                 to repeat ourselves in every module -->
