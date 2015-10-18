@@ -3,6 +3,8 @@ package org.debugroom.sample.javaee6.domain.repository;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import lombok.Data;
 import lombok.Builder;
 import lombok.AllArgsConstructor;
@@ -34,7 +36,7 @@ import org.debugroom.sample.javaee6.domain.repository.impl.jpa.UserRepositoryImp
 public class UserRepositoryImplTest {
 	
 	@Category(UnitTests.class)
-	@RunWith(Theories.class)
+	@RunWith(Enclosed.class)
 	public static class UnitTest{
 		
 		EntityManagerFactory entityManagerFactory;
@@ -48,9 +50,12 @@ public class UserRepositoryImplTest {
 			userRepository.setEntityManagerFactory(entityManagerFactory);
 		}
 		
-		@DataPoints
-		public static FindUserFixture[] findUserFixture = {
-				new FindUserFixture.FindUserFixtureBuilder()
+		@RunWith(Theories.class)
+		public static class normalTestCase1_findOne extends UnitTest{
+
+			@DataPoints
+			public static FindUserFixture[] findUserFixture = {
+					new FindUserFixture.FindUserFixtureBuilder()
 						.userPK(new UserPK("0000000000","00000000"))
 						.expected((User.builder()
 										.id(UserPK.builder()
@@ -62,26 +67,103 @@ public class UserRepositoryImplTest {
 										.build()
 									))
 						.build()
-		};
+			};
 
-		@Theory
-		@Category(TestsWithDatabaseAccess.class)
-		public void normalTestCase1_findOneForUser(FindUserFixture fixture){
-			User user = userRepository.findOne(fixture.userPK);
+			@Theory
+			@Category(TestsWithDatabaseAccess.class)
+			public void normalTestCase1_findOneForUser(FindUserFixture fixture){
+				User user = super.userRepository.findOne(fixture.userPK);
 			
-			assertThat(fixture.toString(), user.getUserName(),
-					is(fixture.expected.getUserName()));
-			assertThat(fixture.toString(), user.getLoginId(),
-					is(fixture.expected.getLoginId()));
-		}
+				assertThat(fixture.toString(), user.getUserName(),
+						is(fixture.expected.getUserName()));
+				assertThat(fixture.toString(), user.getLoginId(),
+						is(fixture.expected.getLoginId()));
+			}
 
-		@Data
-		@Builder
-		@AllArgsConstructor
-		public static class FindUserFixture{
-			UserPK userPK;
-			User expected;
-		}
+			@Data
+			@Builder
+			@AllArgsConstructor
+			public static class FindUserFixture{
+				UserPK userPK;
+				User expected;
+			}
 		                                    
+		}
+		
+		@RunWith(Theories.class)
+		public static class normalTestCase2_findAll extends UnitTest{
+
+			@DataPoints
+			public static FindUserFixture[] findUserFixture = {
+					new FindUserFixture.FindUserFixtureBuilder()
+						.index(0)
+						.expected((User.builder()
+										.id(UserPK.builder()
+													.companyId("00000000000")
+													.userId("00000000")
+													.build())
+										.userName("Kohei Kawabata")
+										.loginId("kohei.kawabata")
+										.build()
+									))
+						.build(),
+					new FindUserFixture.FindUserFixtureBuilder()
+						.index(1)
+						.expected((User.builder()
+										.id(UserPK.builder()
+													.companyId("00000000000")
+													.userId("00000001")
+													.build())
+										.userName("(・∀・)")
+										.loginId("kohei.kawabata2")
+										.build()
+									))
+						.build(),
+					new FindUserFixture.FindUserFixtureBuilder()
+						.index(2)
+						.expected((User.builder()
+										.id(UserPK.builder()
+													.companyId("00000000001")
+													.userId("00000000")
+													.build())
+										.userName("川畑 光平")
+										.loginId("kohei.kawabata3")
+										.build()
+									))
+						.build(),
+						new FindUserFixture.FindUserFixtureBuilder()
+						.index(3)
+						.expected((User.builder()
+										.id(UserPK.builder()
+													.companyId("00000000001")
+													.userId("00000001")
+													.build())
+										.userName("川畑 光平")
+										.loginId("kohei.kawabata4")
+										.build()
+									))
+						.build(),
+			};
+
+			@Theory
+			@Category(TestsWithDatabaseAccess.class)
+			public void normalTestCase1_findOneForUser(FindUserFixture fixture){
+				
+				List<User> users = super.userRepository.findAll();
+			
+				assertThat(fixture.toString(), users.get(fixture.index).getUserName(),
+						is(fixture.expected.getUserName()));
+				assertThat(fixture.toString(), users.get(fixture.index).getLoginId(),
+						is(fixture.expected.getLoginId()));
+			}			
+			
+			@Data
+			@Builder
+			@AllArgsConstructor
+			public static class FindUserFixture{
+				int index;
+				User expected;
+			}
+		}
 	}
 }

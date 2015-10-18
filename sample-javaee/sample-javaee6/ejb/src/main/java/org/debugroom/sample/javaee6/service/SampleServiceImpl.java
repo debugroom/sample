@@ -1,5 +1,7 @@
 package org.debugroom.sample.javaee6.service;
 
+import java.util.List;
+
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -21,6 +23,11 @@ public class SampleServiceImpl implements SampleService{
 	public User findUserService(String companyId, String userId) {
 		UserPK userPK = new UserPK(companyId, userId);
 		return userRepository.findOne(userPK);
+	}
+
+	@Override
+	public List<User> findUsersService() {
+		return userRepository.findAll();
 	}
 
 }

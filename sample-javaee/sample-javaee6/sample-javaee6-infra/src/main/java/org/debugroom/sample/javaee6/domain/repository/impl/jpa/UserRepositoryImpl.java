@@ -22,7 +22,7 @@ public class UserRepositoryImpl implements UserRepository{
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 	
-	private static final String FIND_ALL_QUERY = "FROM User ORDER BY userId";
+	private static final String FIND_ALL_QUERY = "FROM User U ORDER BY U.id.companyId, U.id.userId";
 
 	@PersistenceUnit
 	public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory){

@@ -1,0 +1,25 @@
+
+body {
+	padding:50px;
+	font-family: "Hiragino Kaku Gothic ProN","ƒƒCƒŠƒI", sans-serif;
+}
+
+.foo-after {
+	background-color : white;
+	color : black;
+}
+
+.foo-before {
+	background-color : black;
+	color : white;
+}
+
+.bar-after {
+	background-color : white;
+	color : red;
+}
+
+.bar-before {
+	background-color : red;
+	color : white;
+}
