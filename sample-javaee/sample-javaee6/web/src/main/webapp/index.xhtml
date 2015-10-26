@@ -4,24 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    	  xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-
-<h:head>
-    <title>Sample</title>
-    <link rel="stylesheet" href="#{request.contextPath}/resources/css/style.css" />
-    <script type="text/javascript" src="#{request.contextPath}/resources/js/sample.js"/>
-</h:head>
-      
-<h:body>
-    <h2>サンプル</h2>
-    <h:form>
-        <div id = "foo" class="foo-before" >
-            CompanyId : <h:inputText value="#{sampleBean.companyId}" />
-        </div>
-        <div id = "bar" class="bar-before" >
-            UserId : <h:inputText value="#{sampleBean.userId}" />
-        </div>
-            <h:commandButton value="送信" action="#{sampleBean.next()}"/>
-    </h:form>
-</h:body>
-
+<head>
+<meta http-equiv="Refresh" content="0; URL=/jsf/sample/portal.xhtml" />
+</head>
 </html>

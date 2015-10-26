@@ -2,10 +2,10 @@
     <wb-module deploy-name="sample-ear-1.0-SNAPSHOT">
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
-        <dependent-module archiveName="sample-ejb-1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/sample-ejb/sample-ejb">
+        <dependent-module archiveName="sample-ejb-1.0-SNAPSHOT.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/debugroom/sample-ejb/1.0-SNAPSHOT/sample-ejb-1.0-SNAPSHOT.jar">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sample.war" deploy-path="/" handle="module:/resource/sample-webapp/sample-webapp">
+        <dependent-module archiveName="sample.war" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/debugroom/sample-webapp/1.0-SNAPSHOT/sample-webapp-1.0-SNAPSHOT.war">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="slf4j-api-1.7.5.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar">

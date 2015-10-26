@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Set;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import lombok.Builder;
 import lombok.AllArgsConstructor;
 
@@ -27,6 +28,7 @@ public class Company implements Serializable {
 	private String companyName;
 
 	//bi-directional many-to-one association to User
+	@JsonManagedReference
 	@OneToMany(mappedBy="company")
 	private Set<User> usrs;
 

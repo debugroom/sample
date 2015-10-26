@@ -9,6 +9,7 @@
   <artifactId>sample-javaee-parent</artifactId>
   <packaging>pom</packaging>
   <name>sample-javaee-parent</name>
+  <version>${project.version}</version>
   
   <properties>
     <org.dbunit_dbunit_version>2.4.8</org.dbunit_dbunit_version>

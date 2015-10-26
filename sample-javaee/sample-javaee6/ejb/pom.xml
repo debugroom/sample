@@ -22,7 +22,7 @@
     <parent>
         <artifactId>sample-javaee6</artifactId>
         <groupId>org.debugroom</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
     </parent>
 
     <artifactId>sample-javaee6-ejb</artifactId>
@@ -35,6 +35,7 @@
         <dependency>
             <groupId>org.debugroom</groupId>
             <artifactId>sample-javaee6-infra</artifactId>
+            <version>${project.version}</version>
             <type>ejb</type>
         </dependency>
 

@@ -5,7 +5,7 @@
         <dependent-module archiveName="sample-javaee6-ejb.jar" deploy-path="/" handle="module:/resource/sample-javaee6-ejb/sample-javaee6-ejb">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="sample-javaee6-infra.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/debugroom/sample-javaee6-infra/1.0-SNAPSHOT/sample-javaee6-infra-1.0-SNAPSHOT.jar">
+        <dependent-module archiveName="sample-javaee6-infra.jar" deploy-path="/" handle="module:/resource/sample-javaee6-infra/sample-javaee6-infra">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="sample-javaee6-web.war" deploy-path="/" handle="module:/resource/sample-javaee6-web/sample-javaee6-web">

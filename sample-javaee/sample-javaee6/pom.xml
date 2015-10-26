@@ -20,6 +20,7 @@
     <artifactId>sample-javaee6</artifactId>
     <packaging>pom</packaging>
     <name>sample-javaee6</name>
+    <version>${project.version}</version>
     <url>http://jboss.org/jbossas</url>
     <licenses>
         <license>
@@ -32,7 +33,7 @@
 	<parent>
 		<groupId>org.debugroom</groupId>
 		<artifactId>sample-javaee-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+        <version>${project.version}</version>
 		<relativePath>../sample-javaee-parent</relativePath>
 	</parent>
 
@@ -47,6 +48,7 @@
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
 		<org.jboss.bom.eap_jboss-javaee-6.0-with-tools_version>6.4.0.GA</org.jboss.bom.eap_jboss-javaee-6.0-with-tools_version>
 		<org.jboss.bom.eap_jboss-javaee-6.0-with-hibernate_version>6.4.0.GA</org.jboss.bom.eap_jboss-javaee-6.0-with-hibernate_version>
+		<org.codehaus.jackson_jackson-mapper-asl_version>1.6.3</org.codehaus.jackson_jackson-mapper-asl_version>
         <version.jboss.as>7.5.0.Final-redhat-21</version.jboss.as>
 
 
@@ -110,6 +112,13 @@
                 <version>${org.jboss.bom.eap_jboss-javaee-6.0-with-hibernate_version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${org.codehaus.jackson_jackson-mapper-asl_version}</version>
+                <type>provided</type>
             </dependency>
 
         </dependencies>

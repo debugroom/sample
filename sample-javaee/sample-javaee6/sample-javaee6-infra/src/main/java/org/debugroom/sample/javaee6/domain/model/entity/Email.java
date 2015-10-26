@@ -3,6 +3,9 @@ package org.debugroom.sample.javaee6.domain.model.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import lombok.Builder;
 import lombok.AllArgsConstructor;
 
@@ -29,6 +32,7 @@ public class Email implements Serializable {
 		@JoinColumn(name="company_id", referencedColumnName="company_id", insertable=false, updatable=false),
 		@JoinColumn(name="user_id", referencedColumnName="user_id", insertable=false, updatable=false)
 		})
+	@JsonBackReference
 	private User usr;
 
 	public Email() {

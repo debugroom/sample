@@ -3,11 +3,10 @@
   <parent>
     <groupId>org.debugroom</groupId>
     <artifactId>sample-javaee6</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${project.version}</version>
   </parent>
   <artifactId>sample-javaee6-infra</artifactId>
   <name>sample-javaee6-infra</name>
-  <version>${project.version}</version>
   <packaging>ejb</packaging>
   
   <dependencies>
@@ -45,6 +44,12 @@
     <dependency>
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+      <version>${org.codehaus.jackson_jackson-mapper-asl_version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>

@@ -2,6 +2,10 @@ package org.debugroom.sample.javaee6.domain.model.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 import java.util.Set;
 
 import lombok.Builder;
@@ -39,23 +43,28 @@ public class User implements Serializable {
 
 	//bi-directional many-to-one association to Address
 	@OneToMany(mappedBy="usr")
+	@JsonManagedReference
 	private Set<Address> addresses;
 
 	//bi-directional many-to-one association to Credential
 	@OneToMany(mappedBy="usr")
+	@JsonManagedReference
 	private Set<Credential> credentials;
 
 	//bi-directional many-to-one association to Email
 	@OneToMany(mappedBy="usr")
+	@JsonManagedReference
 	private Set<Email> emails;
 
 	//bi-directional many-to-one association to Phone
 	@OneToMany(mappedBy="usr")
+	@JsonManagedReference
 	private Set<Phone> phones;
 
 	//bi-directional many-to-one association to Company
 	@ManyToOne
 	@JoinColumn(name="company_id", insertable=false, updatable=false)
+	@JsonBackReference
 	private Company company;
 
 	public User() {

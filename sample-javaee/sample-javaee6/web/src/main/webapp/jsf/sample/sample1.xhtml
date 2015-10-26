@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+    <ui:composition>
+        <h2><ui:insert name="title" /></h2>
+        <h:form>
+            <div id = "foo" class="foo-before" >
+                #{i18n.index_item1} <h:inputText value="#{sampleBean.companyId}" />
+            </div>
+            <div id = "bar" class="bar-before" >
+                #{i18n.index_item2} <h:inputText value="#{sampleBean.userId}" />
+            </div>
+            <h:commandButton value="#{i18n.index_buttonName1}" action="#{sampleBean.next()}"/>
+        </h:form>
+    </ui:composition>
+</body>
+</html>

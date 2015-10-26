@@ -21,7 +21,7 @@
    <parent>
       <artifactId>sample-javaee6</artifactId>
       <groupId>org.debugroom</groupId>
-      <version>1.0-SNAPSHOT</version>
+      <version>${project.version}</version>
    </parent>
    <artifactId>sample-javaee6-web</artifactId>
    <packaging>war</packaging>
@@ -79,7 +79,6 @@
                </exclusion>
            </exclusions>
        </dependency>
-
    </dependencies>
 
    <build>
