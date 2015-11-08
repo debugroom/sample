@@ -9,10 +9,16 @@
 <title>Not present in rendered output</title>
 </head>
 <body>
-    <ui:composition template="/jsf/templates/templateSample.xhtml">
-        <ui:define name="title">#{i18n.portal_title}</ui:define>
-        <ui:define name="contents">
-            <ui:include src="/jsf/sample/contentsSample1.xhtml" />
+    <ui:composition template="/jsf/templates/gridLayout.xhtml">
+        <ui:define name="name">#{i18n.gridLayoutSample_h2}</ui:define>
+        <ui:define name="contents1">
+            <ui:include src="/jsf/common/menu.xhtml" />
+        </ui:define>
+        <ui:define name="contents2">
+            <ui:include src="/jsf/sample/contentsSample2.xhtml" />
+        </ui:define>
+        <ui:define name="contents3">
+            <ui:include src="/jsf/sample/contentsSample3.xhtml" />
         </ui:define>
     </ui:composition>
 </body>

@@ -1,0 +1,25 @@
+#container {
+	               width : 1000px;
+	             display : -webkit-grid;
+	-webkit-grid-columns : 250px 250px 250px 250px;
+	   -webkit-grid-rows : 300px;
+}
+
+#contents1 {
+      -webkit-grid-column : 1;
+         -webkit-grid-row : 1; 
+	     background-color : orange;
+}
+
+#contents2 {
+      -webkit-grid-column : 2;
+         -webkit-grid-row : 1; 
+ -webkit-grid-column-span : 2;
+   	     background-color : green;
+}
+
+#contents3 {
+      -webkit-grid-column : 4;
+         -webkit-grid-row : 1; 
+	     background-color : blue;
+}

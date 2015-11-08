@@ -23,3 +23,107 @@ body {
 	background-color : red;
 	color : white;
 }
+
+#main {
+	width : 800px;
+	margin: auto;
+}
+
+#header {
+}
+
+#menu {
+	width : 250px;
+	float : left;
+    padding : 0;
+    margin : 0;
+    list-style-type : none;
+}
+
+#menu li{
+	width : 250px;
+    padding : 0;
+    margin : 0;
+    text-align : center;
+}
+
+#menu li a{
+    color : #fff;
+    font-size : 12px;
+    font-weight : bold;
+    text-shadow : 0 -1px 0px #333,0 1px 0px #555;
+    padding : 10px 0px ;
+    text-decoration : none;
+    display : block;
+    /*全体のグラデーション*/
+    background: #2b606e;/*IE9の背景用*/
+    background: -webkit-linear-gradient(top, #6fa7bc 0%, #3b7b91 50%, #2f6474 50%, #2b606e 100%); /*Google Chrome、Safari*/
+    background:    -moz-linear-gradient(top, #6fa7bc 0%, #3b7b91 50%, #2f6474 50%, #2b606e 100%); /*Firefox用*/
+    background:      -o-linear-gradient(top, #6fa7bc 0%, #3b7b91 50%, #2f6474 50%, #2b606e 100%); /*Opera*/
+    background:     -ms-linear-gradient(top, #6fa7bc 0%, #3b7b91 50%, #2f6474 50%, #2b606e 100%); /*Internet Explorer*/
+    background:         linear-gradient(top, #6fa7bc 0%, #3b7b91 50%, #2f6474 50%, #2b606e 100%);
+    border-left: 1px solid #1f5260;/*仕切り線*/
+    box-shadow:  1px 0px 0px rgba(225,225,225,0.4) inset,/*1pxのハイライト*/
+                -1px 0px 0px rgba(225,225,225,0.2) inset,/*1pxのハイライト*/
+                 0px 1px 1px rgba(0,0,0,0.1) inset,
+                 0px -1px 1px rgba(0,0,0,0.3) inset,
+                 0px 1px 3px #666;
+}
+
+#menu li.first a{
+    border-left : 0px;
+    border-radius         :8px 0px 0px 8px;
+    -moz-border-radius    :8px 0px 0px 8px;
+    -webkit-border-radius :8px 0px 0px 8px;
+    -o-border-radius      :8px 0px 0px 8px;
+    -ms-border-radius     :8px 0px 0px 8px;
+    border-left : 0;
+}
+
+/*最後の角丸*/
+
+#menu li.last a {
+    border-radius         :0px 8px 8px 0;
+    -moz-border-radius    :0px 8px 8px 0;
+    -webkit-border-radius :0px 8px 8px 0;
+    -o-border-radius      :0px 8px 8px 0;
+    -ms-border-radius     :0px 8px 8px 0;
+}
+
+
+#menu li a:hover {
+    background:#6aa3b8;
+    background: -webkit-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -moz-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -o-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -ms-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+                    
+    -pie-background: linear-gradient(top, #2c606f 0%, #6aa3b8 100%);
+    behavior: url("http://liginc.co.jp/demo/2012/06/shi_ra/PIE.htc");
+
+}
+
+
+#menu li.active a {
+    background:#6aa3b8;
+    background: -webkit-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -moz-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -o-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: -ms-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+    background: linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
+                    
+    -pie-background: linear-gradient(top, #2c606f 0%, #6aa3b8 100%);
+    behavior: url("http://liginc.co.jp/demo/2012/06/shi_ra/PIE.htc");
+
+}
+
+#contents {
+	width : 550px;
+	float : right;
+}
+
+#footer {
+	clear : both;
+	
+}
