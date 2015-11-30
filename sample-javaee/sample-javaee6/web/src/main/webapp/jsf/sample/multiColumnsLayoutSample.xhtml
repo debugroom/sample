@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+    <ui:composition template="/jsf/templates/multiColumnsLayout.xhtml">
+        <ui:define name="name">#{i18n.multiColumnsLayoutSample_h2}</ui:define>
+        <ui:define name="title">#{i18n.contentsSample4_title}</ui:define>
+        <ui:define name="contents4">
+            <ui:include src="/jsf/sample/contentsSample4.xhtml" />
+        </ui:define>
+        <ui:define name="contents5">
+            <ui:include src="/jsf/sample/contentsSample5.xhtml" />
+        </ui:define>
+        <ui:define name="contents6">
+            <ui:include src="/jsf/sample/contentsSample6.xhtml" />
+        </ui:define>
+    </ui:composition>
+</body>
+</html>

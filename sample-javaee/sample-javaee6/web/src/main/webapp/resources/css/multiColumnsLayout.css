@@ -1,0 +1,20 @@
+#container {
+	width : 900px;
+	/*
+	column-count : 2;
+	-moz-column-count : 2;
+	-webkit-column-count : 2;
+	column-width : 200px;
+	-moz-column-width : 200px;
+	-webkit-column-width : 200px;
+	*/
+	columns : 170px auto;
+	-moz-columns : 170px auto;
+	-webkit-columns : 170px auto;
+	column-gap : 40px;
+	-moz-column-gap : 40px;
+	-webkit-column-gap : 40px;
+	column-rule : double 2px blue;
+	-moz-column-rule : double 2px blue;
+	-webkit-column-rule : double 2px blue;
+}
