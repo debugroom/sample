@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+    <ui:composition>
+        <h:dataTable value="#{samplePanelGridBean.addresses}" var="address">
+            <f:facet name="header">#{i18n.dataTableSample_h2}</f:facet>
+            <h:column>
+                <f:facet name="header">#{i18n_dataTableSample_tableheader1}</f:facet>
+                #{address.id.companyId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{i18n_dataTableSample_tableheader2}</f:facet>
+                #{address.id.userId}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{i18n_dataTableSample_tableheader3}</f:facet>
+                #{address.userName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{i18n_dataTableSample_tableheader4}</f:facet>
+                #{address.address}
+            </h:column>
+            <h:column>
+                <f:facet name="header">#{i18n_dataTableSample_tableheader5}</f:facet>
+                #{address.addressDetail}
+            </h:column>
+        </h:dataTable>
+    </ui:composition>
+</body>
+</html>

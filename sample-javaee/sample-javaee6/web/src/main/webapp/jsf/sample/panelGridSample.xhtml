@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+    <ui:composition>
+        <h2>#{i18n.panelGridSample_h2}</h2> 
+        <h:panelGrid columns="3">
+           <h:form>
+               #{i18n.panelGridSample_tableheader1}<h:inputText value="#{samplePanelGridBean.specifiedUser.id.companyId}" /> 
+               #{i18n.panelGridSample_tableheader2}<h:inputText value="#{samplePanelGridBean.specifiedUser.id.userId}" />
+               #{i18n.panelGridSample_tableheader3}<h:inputText value="#{samplePanelGridBean.specifiedUser.userName}" />
+               <h:commandButton action="#{samplePanelGridBean.update()}" value="#{i18n.panelGridSample_button}" />
+           </h:form>
+        </h:panelGrid>
+    </ui:composition>
+</body>
+</html>
