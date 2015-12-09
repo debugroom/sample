@@ -13,10 +13,10 @@
         <h2>#{i18n.panelGridSample_h2}</h2> 
         <h:panelGrid columns="3">
            <h:form>
-               #{i18n.panelGridSample_tableheader1}<h:inputText value="#{samplePanelGridBean.specifiedUser.id.companyId}" /> 
-               #{i18n.panelGridSample_tableheader2}<h:inputText value="#{samplePanelGridBean.specifiedUser.id.userId}" />
-               #{i18n.panelGridSample_tableheader3}<h:inputText value="#{samplePanelGridBean.specifiedUser.userName}" />
-               <h:commandButton action="#{samplePanelGridBean.update()}" value="#{i18n.panelGridSample_button}" />
+               #{i18n.panelGridSample_tableheader1}<h:inputText value="#{sampleDataTableBean.specifiedUser.id.companyId}" /> 
+               #{i18n.panelGridSample_tableheader2}<h:inputText value="#{sampleDataTableBean.specifiedUser.id.userId}" />
+               #{i18n.panelGridSample_tableheader3}<h:inputText value="#{sampleDataTableBean.specifiedUser.userName}" />
+               <h:commandButton action="#{sampleDataTableBean.search()}" value="#{i18n.panelGridSample_button}" />
            </h:form>
         </h:panelGrid>
     </ui:composition>

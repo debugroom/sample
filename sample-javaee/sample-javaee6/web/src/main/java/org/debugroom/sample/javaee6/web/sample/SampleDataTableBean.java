@@ -1,10 +1,13 @@
 package org.debugroom.sample.javaee6.web.sample;
 
 import java.util.List;
+import java.io.Serializable;
 
 import javax.ejb.EJB;
 
 import javax.inject.Inject;
+import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 
@@ -15,8 +18,11 @@ import org.debugroom.sample.javaee6.domain.model.entity.Address;
 import lombok.Data;
 
 @Data
-@Model
-public class SamplePanelGridBean {
+@Named
+@SessionScoped
+public class SampleDataTableBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private List<Address> addresses;
 	private User specifiedUser;
@@ -31,21 +37,21 @@ public class SamplePanelGridBean {
 		specifiedUser = sampleService.findUserService(companyId,  userId);
 		return "/jsf/sample/multiColumnsLayoutSample2.xhtml";
 	}
-
-	public String update(){
+	
+	public String search(){
 		addresses = sampleService.findAddressService(companyId, userId);
 		return "/jsf/sample/multiColumnsLayoutSample3.xhtml";
-	}
-
-	@Produces
-	@Model
-	public List<Address> getAddresses(){
-		return addresses;
 	}
 	
 	@Produces
 	@Model
 	public User getSpecifiedUser(){
 		return specifiedUser;
+	}
+
+	@Produces
+	@Model
+	public List<Address> getAddresses(){
+		return addresses;
 	}
 }

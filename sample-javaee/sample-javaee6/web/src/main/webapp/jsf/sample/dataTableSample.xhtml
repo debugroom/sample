@@ -10,26 +10,26 @@
 </head>
 <body>
     <ui:composition>
-        <h:dataTable value="#{samplePanelGridBean.addresses}" var="address">
+        <h:dataTable value="#{sampleDataTableBean.addresses}" var="address">
             <f:facet name="header">#{i18n.dataTableSample_h2}</f:facet>
             <h:column>
-                <f:facet name="header">#{i18n_dataTableSample_tableheader1}</f:facet>
+                <f:facet name="header">#{i18n.dataTableSample_tableheader1}</f:facet>
                 #{address.id.companyId}
             </h:column>
             <h:column>
-                <f:facet name="header">#{i18n_dataTableSample_tableheader2}</f:facet>
+                <f:facet name="header">#{i18n.dataTableSample_tableheader2}</f:facet>
                 #{address.id.userId}
             </h:column>
             <h:column>
-                <f:facet name="header">#{i18n_dataTableSample_tableheader3}</f:facet>
-                #{address.userName}
+                <f:facet name="header">#{i18n.dataTableSample_tableheader3}</f:facet>
+                #{specifiedUser.userName}
             </h:column>
             <h:column>
-                <f:facet name="header">#{i18n_dataTableSample_tableheader4}</f:facet>
+                <f:facet name="header">#{i18n.dataTableSample_tableheader4}</f:facet>
                 #{address.address}
             </h:column>
             <h:column>
-                <f:facet name="header">#{i18n_dataTableSample_tableheader5}</f:facet>
+                <f:facet name="header">#{i18n.dataTableSample_tableheader5}</f:facet>
                 #{address.addressDetail}
             </h:column>
         </h:dataTable>
