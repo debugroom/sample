@@ -1,13 +1,12 @@
-#container {
+#multiColumnsLayout {
 	width : 900px;
+	column-count : 3;
+	-moz-column-count : 3;
+	-webkit-column-count : 3;
 	/*
-	column-count : 2;
-	-moz-column-count : 2;
-	-webkit-column-count : 2;
 	column-width : 200px;
 	-moz-column-width : 200px;
 	-webkit-column-width : 200px;
-	*/
 	columns : 170px auto;
 	-moz-columns : 170px auto;
 	-webkit-columns : 170px auto;
@@ -17,4 +16,14 @@
 	column-rule : double 2px blue;
 	-moz-column-rule : double 2px blue;
 	-webkit-column-rule : double 2px blue;
+	*/
+}
+#contents7 th{
+	background-color : hotpink;
+}
+#contents7 tr:nth-child(odd){
+	background-color : blue;
+}
+#contents7 tr:nth-child(even){
+	background-color : green;
 }
