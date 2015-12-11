@@ -10,12 +10,14 @@
 </head>
 <body>
     <ui:composition>
-        <ul>
-            <li><h:link outcome="/jsf/sample/flexibleLayoutSample">#{i18n.menu_item1}</h:link></li>
-            <li><h:link outcome="/jsf/sample/gridLayoutSample">#{i18n.menu_item2}</h:link></li>
-            <li><h:link outcome="/jsf/sample/multiColumnsLayoutSample">#{i18n.menu_item3}</h:link></li>
-            <li><h:link outcome="/jsf/sample/converterTest">#{i18n.menu_item4}</h:link></li>
-        </ul>
+        <h:form>
+        	<h:panelGrid>
+        		<h:inputText value="#{sampleConverterBean.dateConverterTest}">
+        			<f:convertDateTime pattern="yyyy/M/d" timeZone = "Asia/Tokyo" />
+        		</h:inputText>
+        	</h:panelGrid>
+            <h:commandButton action="#{sampleConverterBean.next()}" value="#{i18n.contentsSample7_button}" />
+        </h:form>
     </ui:composition>
 </body>
 </html>
