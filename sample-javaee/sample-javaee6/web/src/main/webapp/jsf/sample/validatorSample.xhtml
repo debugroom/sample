@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+    <ui:composition>
+        <h:form>
+        	<h:panelGrid>
+        		数値入力：5以外エラー
+        		<h:inputText value="#{sampleValidatorBean.integerValidatorTest}">
+        			<f:validateDoubleRange maximum="5" nimimum="5"/>
+        		</h:inputText>
+        		数値入力2：0 - 100以外エラー
+        		<h:inputText value="#{sampleValidatorBean.longValidatorTest}" />
+        		日付入力：入力必須エラー
+        		<h:inputText value="#{sampleValidatorBean.dateValidatorTest}">
+        			<f:convertDateTime pattern="yyyy-M-d" />
+        			<f:validateRequired />
+        		</h:inputText>
+        		文字列入力：a2010yyy - a2050yyy以外エラ(カスタムアノテーション)
+        		<h:inputText value="#{sampleValidatorBean.code}" />
+        	</h:panelGrid>
+            <h:commandButton action="#{sampleValidatorBean.next()}" value="#{i18n.validatorSample_button}" />
+        </h:form>
+    </ui:composition>
+</body>
+</html>

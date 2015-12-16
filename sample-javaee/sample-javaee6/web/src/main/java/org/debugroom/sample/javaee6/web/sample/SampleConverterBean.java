@@ -17,8 +17,8 @@ public class SampleConverterBean {
 	private Byte byteConverterTest;
 	private Character charactorConverterTest;
 	private Short shortConverterTest;
-	private Integer integerConverTest;
-	private Long longConveterTest;
+	private Integer integerConverterTest;
+	private Long longConverterTest;
 	private Float floatConverterTest;
 	private Double doubleConverterTest;
 	private BigDecimal bigDecimalConverterTest;

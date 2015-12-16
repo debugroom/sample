@@ -25,7 +25,7 @@ body {
 }
 
 #main {
-	width : 800px;
+	width : 900px;
 	margin: auto;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 #menu {
-	width : 250px;
+	width : 300px;
 	float : left;
     padding : 0;
     margin : 0;
@@ -41,7 +41,7 @@ body {
 }
 
 #menu li{
-	width : 250px;
+	width : 300px;
     padding : 0;
     margin : 0;
     text-align : center;
@@ -98,7 +98,7 @@ body {
     background: -o-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
     background: -ms-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
     background: linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
-                    
+
     -pie-background: linear-gradient(top, #2c606f 0%, #6aa3b8 100%);
     behavior: url("http://liginc.co.jp/demo/2012/06/shi_ra/PIE.htc");
 
@@ -112,7 +112,7 @@ body {
     background: -o-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
     background: -ms-linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
     background: linear-gradient(top, #2c606f 1%, #6aa3b8 100%);
-                    
+
     -pie-background: linear-gradient(top, #2c606f 0%, #6aa3b8 100%);
     behavior: url("http://liginc.co.jp/demo/2012/06/shi_ra/PIE.htc");
 
@@ -125,5 +125,5 @@ body {
 
 #footer {
 	clear : both;
-	
+
 }
