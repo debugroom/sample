@@ -16,6 +16,9 @@
     <module>sample-initdb</module>
     <module>sample-ejb2</module>
     <module>sample-javaee</module>
+    <module>sample-spring-boot-parent</module>
+    <module>sample-spring-cassandra</module>
+    <module>sample-spring-boot</module>
   </modules>
 
 </project>
