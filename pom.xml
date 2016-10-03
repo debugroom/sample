@@ -19,6 +19,7 @@
     <module>sample-spring-boot-parent</module>
     <module>sample-spring-cassandra</module>
     <module>sample-spring-boot</module>
+    <module>sample-spring-jpa</module>
   </modules>
 
 </project>
