@@ -8,10 +8,10 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.debugroom.sample.spring.jpa.domain.entity.Address</class>
 		<class>org.debugroom.sample.spring.jpa.domain.entity.Affiliation</class>
-		<class>org.debugroom.sample.spring.jpa.domain.entity.AffiliationId</class>
 		<class>org.debugroom.sample.spring.jpa.domain.entity.Email</class>
-		<class>org.debugroom.sample.spring.jpa.domain.entity.EmailId</class>
 		<class>org.debugroom.sample.spring.jpa.domain.entity.Group</class>
 		<class>org.debugroom.sample.spring.jpa.domain.entity.User</class>
+		<class>org.debugroom.sample.spring.jpa.domain.entity.AffiliationPK</class>
+		<class>org.debugroom.sample.spring.jpa.domain.entity.EmailPK</class>
 	</persistence-unit>
 </persistence>

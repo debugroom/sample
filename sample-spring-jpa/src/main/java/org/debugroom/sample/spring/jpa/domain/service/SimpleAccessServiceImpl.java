@@ -75,4 +75,43 @@ public class SimpleAccessServiceImpl implements SimpleAccessService{
 		return groups;
 	}
 
+	@Override
+	public User getUser(String userId) {
+		User user = userRepository.findOne(userId);
+		log.info(this.getClass().getName() + " : userId " + userId);
+		log.info(this.getClass().getName() + "            - {"
+					+ user.getUserName() + ", " + user.getLoginId() + "}");
+		return user;
+	}
+
+	@Override
+	public Address getAddress(User user) {
+		Address address = addressRepository.findOne(user.getUserId());
+		log.info(this.getClass().getName() + " : address of " + user.getUserId());
+		log.info(this.getClass().getName() + "            - {"
+					+ address.getZipCd() + ", " + address.getAddress() + "}");
+		return address;
+	}
+
+	@Override
+	public List<Email> getEmails(User user) {
+		List<Email> emails = emailRepository.findByIdUserId(user.getUserId());
+		log.info(this.getClass().getName() + " : emails of userId : " + user.getUserId());
+		for(Email email : emails){
+			log.info(this.getClass().getName() + "            - {"
+					+ email.getId().getUserId() + ", " + email.getId().getEmailId() 
+					+ "," + email.getEmail() + "}");
+		}
+		return emails;
+	}
+
+	@Override
+	public Group getGroup(String groupName) {
+		Group group = groupRepository.findByGroupName(groupName);
+		log.info(this.getClass().getName() + " : Group of " + groupName);
+		log.info(this.getClass().getName() + "            - {"
+					+ group.getGroupId() + ", " + group.getGroupName() + "}");
+		return group;
+	}
+
 }

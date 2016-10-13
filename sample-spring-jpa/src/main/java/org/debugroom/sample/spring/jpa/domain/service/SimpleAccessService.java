@@ -17,4 +17,12 @@ public interface SimpleAccessService {
 	
 	public List<Group> getGroups();
 	
+	public User getUser(String userId);
+	
+	public Address getAddress(User user);
+	
+	public List<Email> getEmails(User user);
+	
+	public Group getGroup(String groupName);
+
 }

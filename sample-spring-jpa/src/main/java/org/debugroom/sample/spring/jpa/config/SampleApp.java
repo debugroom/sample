@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.List;
+
+import org.debugroom.sample.spring.jpa.domain.entity.User;
 import org.debugroom.sample.spring.jpa.domain.service.SimpleAccessService;
 import org.debugroom.sample.spring.jpa.domain.service.SimpleAccessServiceImpl;
 
@@ -22,10 +25,15 @@ public class SampleApp {
 
 		SimpleAccessService simpleAccessService = context.getBean(SimpleAccessService.class);
 		
-		simpleAccessService.getUsers();
+		List<User> users = simpleAccessService.getUsers();
 		simpleAccessService.getAddressList();
 		simpleAccessService.getEmails();
 		simpleAccessService.getGroups();
+		simpleAccessService.getUser(users.get(0).getUserId());
+		simpleAccessService.getAddress(users.get(0));
+		simpleAccessService.getEmails(users.get(0));
+		simpleAccessService.getGroup("org.debugroom");
+		
 		
 	}
 
