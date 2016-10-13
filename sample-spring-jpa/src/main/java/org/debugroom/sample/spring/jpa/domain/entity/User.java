@@ -1,6 +1,8 @@
 package org.debugroom.sample.spring.jpa.domain.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,9 +17,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.NamedQuery;
-import java.sql.Timestamp;
-import java.util.Set;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "usr", schema = "public", 
 		uniqueConstraints = @UniqueConstraint(columnNames = "login_id") )
@@ -46,11 +51,10 @@ public class User implements Serializable {
 			cascade= CascadeType.ALL)
 	private Address address;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usr")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usr", cascade= CascadeType.ALL)
 	private Set<Affiliation> affiliations;
 
-	//bi-directional many-to-one association to Email
-	@OneToMany(mappedBy="usr")
+	@OneToMany(mappedBy="usr", cascade= CascadeType.ALL)
 	private Set<Email> emails;
 
 	public User() {

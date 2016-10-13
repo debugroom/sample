@@ -2,6 +2,8 @@ package org.debugroom.sample.spring.jpa.domain.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,11 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.NamedQuery;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "address", schema = "public")
 @NamedQuery(name="Address.findAll", query="SELECT a FROM Address a")
@@ -21,7 +28,6 @@ public class Address implements Serializable {
 	private static final long serialVersionUID = 2339974563902001678L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id", unique = true, nullable = false, length = 8)
 	private String userId;
 
