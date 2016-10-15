@@ -10,4 +10,6 @@ public interface EmailRepository extends JpaRepository<Email, EmailPK>{
 	
 	public List<Email> findByIdUserId(String userId);
 
+	public Email findByEmail(String email);
+
 }

@@ -14,6 +14,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.NamedQuery;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "email", schema = "public")
 @NamedQuery(name="Email.findAll", query="SELECT e FROM Email e")
@@ -36,7 +41,7 @@ public class Email implements Serializable {
 	@Column(name = "ver")
 	private Integer ver;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false, insertable = false, updatable = false)
 	private User usr;
 

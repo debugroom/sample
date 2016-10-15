@@ -48,13 +48,13 @@ public class User implements Serializable {
 	private Integer ver;
 
 	@OneToOne(mappedBy="usr", optional=false, fetch= FetchType.LAZY,
-			cascade= CascadeType.ALL)
+			cascade= CascadeType.ALL, orphanRemoval = true)
 	private Address address;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usr", cascade= CascadeType.ALL)
 	private Set<Affiliation> affiliations;
 
-	@OneToMany(mappedBy="usr", cascade= CascadeType.ALL)
+	@OneToMany(mappedBy="usr", cascade= CascadeType.ALL, orphanRemoval = true)
 	private Set<Email> emails;
 
 	public User() {

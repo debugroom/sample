@@ -5,6 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@Builder
+@AllArgsConstructor
 @Embeddable
 public class EmailPK implements Serializable {
 
