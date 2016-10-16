@@ -51,7 +51,7 @@ public class User implements Serializable {
 			cascade= CascadeType.ALL, orphanRemoval = true)
 	private Address address;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usr", cascade= CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usr", cascade= CascadeType.ALL, orphanRemoval=true)
 	private Set<Affiliation> affiliations;
 
 	@OneToMany(mappedBy="usr", cascade= CascadeType.ALL, orphanRemoval = true)

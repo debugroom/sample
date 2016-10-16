@@ -5,6 +5,11 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Builder
 @Embeddable
 public class AffiliationPK implements Serializable {
 

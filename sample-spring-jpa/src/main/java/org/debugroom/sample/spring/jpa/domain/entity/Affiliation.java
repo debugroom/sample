@@ -13,6 +13,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.NamedQuery;
 
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name = "affiliation", schema = "public")
 @NamedQuery(name="Affiliation.findAll", query="SELECT a FROM Affiliation a")

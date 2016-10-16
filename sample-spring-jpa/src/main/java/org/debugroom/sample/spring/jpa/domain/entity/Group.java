@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.NamedQuery;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+@AllArgsConstructor
+@Builder
 @Entity
 @Table(name="grp")
 @NamedQuery(name="Group.findAll", query="SELECT g FROM Group g")
@@ -32,7 +38,8 @@ public class Group implements Serializable {
 	@Column(name = "ver")
 	private Integer ver;
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grp")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "grp",
+			cascade=CascadeType.ALL, orphanRemoval=true)
 	private Set<Affiliation> affiliations;
 
 	public Group() {
