@@ -4,16 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
    	  xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-      
+
       <h:head>
       	<title>Sample Output</title>
+        <script type="text/javascript" src="resources/js/jquery.min.js"></script>
       </h:head>
       
       <h:body>
       	<h2>サンプル出力</h2>
       	<h:form>
-      		<h:inputText value="#{user.userName}" />
+      	<!--  
+      	-->
+      		1.<h:inputHidden value="#{user.userName}" escape="false" /><br/>
+      		2.<h:outputText value="#{user.userName}" escape="false" /><br/>
+      		3.#{user.userName}<br/>
+      		4.<h:inputHidden id="test-xss" value="#{user.userName}" /><br/>
+      		5.<h:outputText id="test-xss2" value="#{user.userName}" /><br/>
+      		<div id="space"></div>
       	</h:form>
       </h:body>
 
+      <script type="text/javascript" src="resources/js/xss-test.js"></script>
 </html>

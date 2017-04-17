@@ -5,6 +5,19 @@
    	  xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
+<!--
 <meta http-equiv="Refresh" content="0; URL=/sample-javaee6-web/jsf/sample/portal.xhtml" />
+-->
 </head>
+
+        <h:form>
+            <div id = "foo" class="foo-before" >
+                #{i18n.index_item1} <h:inputText value="#{sampleBean.companyId}" />
+            </div>
+            <div id = "bar" class="bar-before" >
+                #{i18n.index_item2} <h:inputText value="#{sampleBean.userId}" />
+            </div>
+            <h:commandButton value="#{i18n.index_buttonName1}" action="#{sampleBean.test()}"/>
+        </h:form>
+
 </html>

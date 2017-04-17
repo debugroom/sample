@@ -40,4 +40,9 @@ public class SampleBean {
 		return user;
 	}
 
+	public String test(){
+		user = sampleService.findUserService(companyId, userId);
+		return "output.xhtml";
+	}
+
 }
