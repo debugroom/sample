@@ -11,6 +11,7 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.cassandra.core.CassandraOperations;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +30,9 @@ import lombok.extern.slf4j.Slf4j;
 @Component
 public class InitilizingDbAspect {
 
-	@Autowired CassandraOperations operations;
+	@Autowired
+	@Qualifier("cassandraTemplate")
+	CassandraOperations operations;
 	
 	@Pointcut("execution(* org.debugroom.sample.cassandra.domain.service.*.*(..))")
 	public void pointcut(){
@@ -133,6 +136,16 @@ public class InitilizingDbAspect {
 						.ver(0)
 						.lastUpdatedDate(new Date())
 						.build();		
+		User user3 = User.builder()
+						.userId(Long.valueOf(2))
+						.userName("(・ω・｀)")
+						.loginId("test3")
+						.isEnabled(true)
+						.isLocked(false)
+						.isAdmin(false)
+						.ver(0)
+						.lastUpdatedDate(new Date())
+						.build();
 		Group groupA = Group.builder()
 						.groupId(Long.valueOf(0))
 						.groupName("GroupA")
@@ -153,7 +166,7 @@ public class InitilizingDbAspect {
 						.build();
 		
 		Affiliation affiliation1 = Affiliation.builder()
-									.affiliationPK(AffiliationPK.builder()
+									.affiliationpk(AffiliationPK.builder()
 																.userId(Long.valueOf(0))
 																.groupId(Long.valueOf(0))
 																.build())
@@ -161,7 +174,7 @@ public class InitilizingDbAspect {
 									.lastUpdatedDate(new Date())
 									.build();
 		Affiliation affiliation2 = Affiliation.builder()
-									.affiliationPK(AffiliationPK.builder()
+									.affiliationpk(AffiliationPK.builder()
 																.userId(Long.valueOf(0))
 																.groupId(Long.valueOf(1))
 																.build())
@@ -169,7 +182,7 @@ public class InitilizingDbAspect {
 									.lastUpdatedDate(new Date())
 									.build();
 		Affiliation affiliation3 = Affiliation.builder()
-									.affiliationPK(AffiliationPK.builder()
+									.affiliationpk(AffiliationPK.builder()
 																.userId(Long.valueOf(1))
 																.groupId(Long.valueOf(1))
 																.build())
@@ -179,6 +192,7 @@ public class InitilizingDbAspect {
 
 		operations.insert(user1);
 		operations.insert(user2);
+		operations.insert(user3);
 		operations.insert(groupA);
 		operations.insert(groupB);
 		operations.insert(groupC);

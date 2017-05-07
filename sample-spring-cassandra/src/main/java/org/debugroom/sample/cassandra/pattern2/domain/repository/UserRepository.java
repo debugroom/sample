@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.debugroom.sample.cassandra.pattern2.domain.entity.User;
 
-public interface UserRepository extends CrudRepository<User, Long>{
+public interface UserRepository extends CrudRepository<User, Long>, UserRepositoryCustom{
 	
 	@Query("select * from users where login_id = ?0")
 //	@Query("select * from users_by_login_id where login_id = ?0")

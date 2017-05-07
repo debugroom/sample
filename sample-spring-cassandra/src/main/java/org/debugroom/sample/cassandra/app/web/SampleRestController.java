@@ -26,6 +26,12 @@ public class SampleRestController {
 		return sampleService.getUsers();
 	}
 	
+	@RequestMapping(value="addresses", method=RequestMethod.GET)
+	@ResponseStatus(HttpStatus.OK)
+	public List<?> getAddresses(){
+		return sampleService.getAddresses();
+	}
+	
 	@RequestMapping(value="emails", method=RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	public List<?> getEmails(){

@@ -23,7 +23,8 @@ public class RestClient {
 	public static void main(String[] args){
 
 //		String response = executeGetUsersRequest(new RestTemplate());
-//		String response = executeGetEmailsRequest(new RestTemplate());
+//		String response = executeGetAddressesRequest(new RestTemplate());
+//      String response = executeGetEmailsRequest(new RestTemplate());
 //		String response = executeGetGroupsRequest(new RestTemplate());
 //		String response = executeLoginRequest(new RestTemplate());
 //		String response = executeGetUserRequest(new RestTemplate());
@@ -41,13 +42,13 @@ public class RestClient {
 //		String response = executeDeleteEmailRequest(new RestTemplate());
 //		String response = executeDeleteEmailsRequest(new RestTemplate());
 //		String response = executeGetGroupsByGroupNameRequest(new RestTemplate());
-//		String response = executeGetGroupsByUserIdRequest(new RestTemplate());
+		String response = executeGetGroupsByUserIdRequest(new RestTemplate());
 //		String response = executeGetUsersByGroupIdRequest(new RestTemplate());
 //		String response = executeGetNotUsersByGroupIdRequest(new RestTemplate());
 //		String response = executeAddUserToGroupRequest(new RestTemplate());
 //		String response = executeDeleteUserFromGroupRequest(new RestTemplate());
 //		String response = executeDeleteGroupRequest(new RestTemplate());
-		String response = executeDeleteUserRequest(new RestTemplate());
+//		String response = executeDeleteUserRequest(new RestTemplate());
 		
 		log.info(RestClient.class.getName() + " : " + response);
 		
@@ -56,6 +57,11 @@ public class RestClient {
 	private static String executeGetUsersRequest(RestTemplate restTemplate){
 		return restTemplate.getForObject(SERVER_URL + APP_NAME
 				+ "users", String.class);
+	}
+
+	private static String executeGetAddressesRequest(RestTemplate restTemplate){
+		return restTemplate.getForObject(SERVER_URL + APP_NAME
+				+ "addresses", String.class);
 	}
 
 	private static String executeGetEmailsRequest(RestTemplate restTemplate){

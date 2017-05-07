@@ -8,8 +8,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.debugroom.sample.cassandra.pattern2.domain.entity.Affiliation;
 import org.debugroom.sample.cassandra.pattern2.domain.entity.AffiliationPK;
 
-public interface AffiliationRepository extends CrudRepository<Affiliation, AffiliationPK>{
+public interface AffiliationRepository 
+      extends CrudRepository<Affiliation, AffiliationPK>, AffiliationRepositoryCustom{
 	
-	public List<Affiliation> findByAffiliationKeyGroupId(Long groupId);
+	public List<Affiliation> findByAffiliationpkGroupId(Long groupId);
 	
+	@Query("select * from affiliation where user_id =?0 allow filtering")
+	public List<Affiliation> findByAffiliationpkUserId(Long userId);
+
 }

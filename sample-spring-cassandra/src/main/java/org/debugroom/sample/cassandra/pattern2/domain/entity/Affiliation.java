@@ -19,8 +19,8 @@ public class Affiliation {
 	public Affiliation(){
 	}
 
-	@PrimaryKey
-	private AffiliationPK affiliationPK;
+	@PrimaryKey("affiliationpk")
+	private AffiliationPK affiliationpk;
 	@Column("ver")
 	private int ver;
 	@Column("last_updated_date")
