@@ -1,1 +1,1 @@
-create database sample_app encoding 'utf8';
+create database "sample-app" encoding 'utf8';
