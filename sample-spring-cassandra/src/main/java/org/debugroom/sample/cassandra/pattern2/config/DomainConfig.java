@@ -1,10 +1,10 @@
 package org.debugroom.sample.cassandra.pattern2.config;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
-import org.debugroom.sample.cassandra.pattern2.config.infra.CassandraConfig;
+import org.springframework.context.annotation.Configuration;
 
-@ComponentScan("org.debugroom.sample.cassandra.pattern2.domain")
-@Import(CassandraConfig.class)
+@Configuration
+@ComponentScan({ "org.debugroom.sample.cassandra.pattern2.domain", 
+	"org.debugroom.sample.cassandra.pattern2.config.infra"})
 public class DomainConfig {
 }

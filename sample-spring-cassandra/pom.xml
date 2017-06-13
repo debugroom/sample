@@ -81,4 +81,16 @@
           
   </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>org.debugroom.sample.cassandra.config.SimpleWebApp</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
 </project>
