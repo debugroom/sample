@@ -2,6 +2,7 @@ package org.debugroom.sample.cassandra.pattern1.common;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -176,6 +177,8 @@ public class InitilizingDbAspect {
 							.lastUpdatedDate(new Date())
 							.build();
 
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+
 		Credential credential1 = Credential.builder()
 											.credentialPK(CredentialPK.builder()
 															.credentialType("PASSWORD")
@@ -183,7 +186,8 @@ public class InitilizingDbAspect {
 															.build())
 											.credentialKey("qwerty")
 											.userId(Long.valueOf(0))
-											.expiredDate(DateFormat.getDateInstance().parse("2017/12/31"))
+//											.expiredDate(DateFormat.getDateInstance().parse("2017/12/31"))
+											.expiredDate(dateFormat.parse("2017/12/31"))
 											.ver(0)
 											.lastUpdatedDate(new Date())
 											.build();
@@ -195,7 +199,8 @@ public class InitilizingDbAspect {
 															.build())
 											.credentialKey("123456")
 											.userId(Long.valueOf(1))
-											.expiredDate(DateFormat.getDateInstance().parse("2017/12/31"))
+//											.expiredDate(DateFormat.getDateInstance().parse("2017/12/31"))
+											.expiredDate(dateFormat.parse("2017/12/31"))
 											.ver(0)
 											.lastUpdatedDate(new Date())
 											.build();
