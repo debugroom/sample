@@ -14,6 +14,6 @@ RUN yum -y install dsc30
 RUN yum -y install cassandra30-tools
 RUN sed -i s/\#-Xms4G/-Xms512M/g /etc/cassandra/conf/jvm.options
 RUN sed -i s/\#-Xmx4G/-Xmx1G/g /etc/cassandra/conf/jvm.options
-RUN systemctl enable cassandra
+# RUN systemctl enable cassandra
 
-EXPOSE 9042
+EXPOSE 7199 7000 7001 9160 9042 22 8012 61621 
