@@ -1,4 +1,6 @@
 # Dockerfile for Spring Data Cassandra app using embedded tomcat server
+# Run parent directory because this app needs sample-spring-boot-parent for maven build.
+# ex) docker build -t <your image> ~/sample/ -f ~/sample/sample-spring-cassandra/Dockerfile 
 
 FROM docker.io/centos:latest
 MAINTAINER debugroom

@@ -2,6 +2,7 @@ package org.debugroom.sample.cassandra.pattern2.common;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -71,31 +72,39 @@ public class InitilizingDbAspect {
 						.build());
 		List<Credential> credentials1 = new ArrayList<Credential>();
 		List<Credential> credentials2 = new ArrayList<Credential>();
+
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+
 		credentials1.add(Credential.builder()
 							.credentialType("password")
 							.credentialKey("123456")
-							.expiredDate(DateFormat.getDateInstance().parse("2016/12/31"))
+							// OpenJDK1.8 cannot execute.
+//							.expiredDate(DateFormat.getDateInstance().parse("2016/12/31"))
+							.expiredDate(dateFormat.parse("2016/12/31"))
 							.ver(0)
 							.lastUpdatedDate(new Date())
 							.build());
 		credentials1.add(Credential.builder()
 							.credentialType("password")
 							.credentialKey("qwerty")
-							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+//							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+							.expiredDate(dateFormat.parse("9999/12/31"))
 							.ver(0)
 							.lastUpdatedDate(new Date())
 							.build());
 		credentials2.add(Credential.builder()
 							.credentialType("password")
 							.credentialKey("asdfgh")
-							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+//							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+							.expiredDate(dateFormat.parse("9999/12/31"))
 							.ver(0)
 							.lastUpdatedDate(new Date())
 							.build());
 		credentials2.add(Credential.builder()
 							.credentialType("oauth2")
 							.credentialKey("1234567890qwertyuiopasdfghjklzxcvbnm")
-							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+//							.expiredDate(DateFormat.getDateInstance().parse("9999/12/31"))
+							.expiredDate(dateFormat.parse("9999/12/31"))
 							.ver(0)
 							.lastUpdatedDate(new Date())
 							.build());
