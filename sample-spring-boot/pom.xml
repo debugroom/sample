@@ -9,6 +9,11 @@
   <artifactId>sample-spring-boot</artifactId>
   <name>sample-spring-boot</name>
   
+  <properties>
+    <net.sf.dozer_dozer_version>5.5.1</net.sf.dozer_dozer_version>
+    <net.sf.dozer_dozer-spring_version>5.5.1</net.sf.dozer_dozer-spring_version>
+  </properties>
+  
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -26,6 +31,16 @@
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
     </dependency>
+    <dependency>
+        <groupId>net.sf.dozer</groupId>
+        <artifactId>dozer</artifactId>
+        <version>${net.sf.dozer_dozer_version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.sf.dozer</groupId>
+        <artifactId>dozer-spring</artifactId>
+        <version>${net.sf.dozer_dozer-spring_version}</version>
+      </dependency>
   </dependencies>
 
   <build>
@@ -33,6 +48,16 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <configuration>
+              <mainClass>org.debugroom.sample.spring.boot.config.TestDozerApp</mainClass>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
