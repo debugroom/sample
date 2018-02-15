@@ -22,4 +22,5 @@ public class WebApp extends SpringBootServletInitializer{
 		return builder.sources(WebApp.class);
 	}
 
+
 }
