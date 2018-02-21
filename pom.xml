@@ -22,6 +22,7 @@
     <module>sample-spring-jpa</module>
     <module>sample-spring-websocket</module>
     <module>sample-spring-cloud-aws</module>
+    <module>sample-spring-cloud-function</module>
   </modules>
 
 </project>

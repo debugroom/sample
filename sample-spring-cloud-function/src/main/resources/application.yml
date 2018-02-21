@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    function:
+      scan:
+        packages: org.debugroom.sample.spring.cloud.functions
+cloud:
+  aws:
+    stack:
+      auto: false
+    credentials:
+      instanceProfile: false
+      profileName:
+    region:
+      auto: false
