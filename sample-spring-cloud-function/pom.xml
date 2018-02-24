@@ -19,8 +19,8 @@
     <com.amazonaws_aws-lambda-java-core_version>1.1.0</com.amazonaws_aws-lambda-java-core_version>
     <reactor.version>3.1.2.RELEASE</reactor.version>
     <org.springframework.cloud_spring-cloud-starter-aws_version>1.2.2.RELEASE</org.springframework.cloud_spring-cloud-starter-aws_version>
-    <org.springframework.cloud_spring-cloud-function-adapter-aws_version>1.0.0.BUILD-SNAPSHOT</org.springframework.cloud_spring-cloud-function-adapter-aws_version>
-    <org.springframework.cloud_spring-cloud-function-web_version>1.0.0.BUILD-SNAPSHOT</org.springframework.cloud_spring-cloud-function-web_version>
+    <org.springframework.cloud_spring-cloud-function-adapter-aws_version>1.0.0.M3</org.springframework.cloud_spring-cloud-function-adapter-aws_version>
+    <org.springframework.cloud_spring-cloud-function-web_version>1.0.0.M3</org.springframework.cloud_spring-cloud-function-web_version>
     </properties>
 
   <dependencies>
@@ -44,7 +44,6 @@
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-lambda-java-events</artifactId>
       <version>${com.amazonaws_aws-lambda-java-events_version}</version>
-      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>

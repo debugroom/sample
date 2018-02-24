@@ -15,6 +15,7 @@ import com.amazonaws.services.s3.event.S3EventNotification;
 @Configuration
 public class ProductionConfig {
 
+	/* @FunctionScanを使用しない場合Bean登録しておく。
 	@Bean
 	public Function<S3EventNotification, String> s3EventFunction() {
 		return event -> {
@@ -23,6 +24,7 @@ public class ProductionConfig {
 			return "Complete!";
 		};
 	}
+	 */
 	
 	@Bean
 	public AmazonS3 amazonS3Client(){

@@ -2,7 +2,7 @@ spring:
   cloud:
     function:
       scan:
-        packages: org.debugroom.sample.spring.cloud.functions
+        packages: org.debugroom.sample.spring.cloud.function
 cloud:
   aws:
     stack:
