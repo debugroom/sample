@@ -8,8 +8,8 @@ import org.springframework.cloud.aws.autoconfigure.cache.ElastiCacheAutoConfigur
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Import;
 
-@Import(MvcConfig.class)
-@SpringBootApplication(exclude={ElastiCacheAutoConfiguration.class})
+//@Import(MvcConfig.class)
+//@SpringBootApplication(exclude={ElastiCacheAutoConfiguration.class})
 public class WebApp extends SpringBootServletInitializer{
 
 	public static void main(String[] args){
